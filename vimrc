@@ -12,6 +12,7 @@ set title
 set showcmd                     " shows partial commands
 set hidden                      " hide the inactive buffers
 set ruler                       " sets a permanent rule
+set clipboard=unnamedplus	" use sytem clipboard
 
 
 set textwidth=80
