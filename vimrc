@@ -19,7 +19,7 @@ set textwidth=80
 set colorcolumn=81
 
 
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
@@ -66,6 +66,8 @@ filetype plugin indent on     " Required!
 " Installation check.
 NeoBundleCheck
 
+call neobundle#end()
+
 syntax enable
 set background=dark            " set a dark background
 set t_Co=256                   " 256 colors for the terminal
@@ -78,7 +80,6 @@ endif
 
 set noshowmode
 let g:airline_theme='powerlineish'
-let g:airline_enable_branch=1
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
 
