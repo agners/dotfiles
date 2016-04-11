@@ -14,10 +14,10 @@ set hidden                      " hide the inactive buffers
 set ruler                       " sets a permanent rule
 set clipboard=unnamedplus	" use sytem clipboard
 
-
 set textwidth=80
 set colorcolumn=81
 
+filetype plugin indent on     " Required!
 
 call neobundle#begin(expand('~/.vim/bundle/'))
 
@@ -56,7 +56,6 @@ NeoBundle 'tpope/vim-dispatch'
 
 " ...
 
-filetype plugin indent on     " Required!
 "
 " Brief help
 " :NeoBundleList          - list configured bundles
@@ -81,7 +80,8 @@ endif
 set noshowmode
 let g:airline_theme='powerlineish'
 let g:airline_powerline_fonts=1
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#branch#enabled=1
+let g:airline#extensions#tabline#enabled=1
 
 " tab navigation like firefox
 nnoremap <C-e>     :tabprevious<CR>
