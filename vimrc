@@ -12,7 +12,11 @@ set title
 set showcmd                     " shows partial commands
 set hidden                      " hide the inactive buffers
 set ruler                       " sets a permanent rule
-set clipboard=unnamedplus	" use sytem clipboard
+set clipboard^=unnamedplus	" use sytem clipboard
+
+" Don't clear clipboard on exit
+autocmd VimLeavePre * call system("xsel -ib", getreg('+'))
+
 
 set textwidth=80
 set colorcolumn=81
@@ -34,10 +38,12 @@ NeoBundle 'Shougo/vimproc'
 " Original repos on github
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundle 'bling/vim-airline'
+NeoBundle 'vim-airline/vim-airline'
+NeoBundle 'vim-airline/vim-airline-themes'
 NeoBundle 'joedicastro/vim-molokai256'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'tpope/vim-dispatch'
+NeoBundle 'ctrlpvim/ctrlp.vim'
 
 " NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 " vim-scripts repos
@@ -78,21 +84,34 @@ endif
 
 
 set noshowmode
+" Airline configuration
 let g:airline_theme='powerlineish'
 let g:airline_powerline_fonts=1
 let g:airline#extensions#branch#enabled=1
 let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#fnamemod = ':t'
 
-" tab navigation like firefox
-nnoremap <C-e>     :tabprevious<CR>
-nnoremap <C-r>     :tabnext<CR>
-nnoremap <C-t>     :tabnew<CR>
-inoremap <C-e>     <Esc>:tabprevious<CR>i
-inoremap <C-r>     <Esc>:tabnext<CR>i
-inoremap <C-t>     <Esc>:tabnew<CR>
+" CtrlP configuration
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -c --exclude-standard']
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:20,results:20'
+let g:ctrlp_custom_ignore = {
+	\ 'dir':  '\v[\/]\.(git|hg|svn)$',
+	\ 'file': '\v\.(exe|so|dll|swp)$',
+	\ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
+	\ }
+
+" buffer (tab) emulation...
+let mapleader=" "
+nmap <leader>t     :enew<CR>
+nmap <leader>e     :bnext<CR>
+nmap <leader>w     :bprevious<CR>
+nnoremap <C-w>     :bprevious<CR>
+nnoremap <C-e>     :bnext<CR>
+nnoremap <C-t>     :enew<CR>
 
 map <F8>     :make\|copen<CR>
 
 " tab completion
 set wildmode=longest,list,full
 set wildmenu
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
