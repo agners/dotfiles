@@ -2,6 +2,11 @@
 # ~/.bashrc
 #
 
+# https://github.com/magicmonty/bash-git-prompt
+GIT_PROMPT_SHOW_UNTRACKED_FILES=no
+GIT_PROMPT_ONLY_IN_REPO=1
+source ~/.bash-git-prompt/gitprompt.sh
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
