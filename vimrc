@@ -44,6 +44,7 @@ NeoBundle 'joedicastro/vim-molokai256'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'tpope/vim-dispatch'
 NeoBundle 'ctrlpvim/ctrlp.vim'
+NeoBundle 'edkolev/tmuxline.vim'
 
 " NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 " vim-scripts repos
@@ -84,6 +85,10 @@ endif
 
 
 set noshowmode
+
+" Use mouse mode even if tmux uses mouse mode...
+set mouse=a
+
 " Airline configuration
 let g:airline_theme='powerlineish'
 let g:airline_powerline_fonts=1
