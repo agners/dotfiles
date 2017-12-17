@@ -23,56 +23,24 @@ set colorcolumn=81
 
 filetype plugin indent on     " Required!
 
-call neobundle#begin(expand('~/.vim/bundle/'))
+" Use vim-plug pluggin system
+call plug#begin('~/.vim/plugged')
 
-" Let NeoBundle manage NeoBundle
-NeoBundleFetch 'Shougo/neobundle.vim'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 
-" Recommended to install
-" After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
-NeoBundle 'Shougo/vimproc'
+Plug 'tpope/vim-fugitive'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'joedicastro/vim-molokai256'
+Plug 'tomasr/molokai'
+Plug 'tpope/vim-dispatch'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'edkolev/tmuxline.vim'
 
-" falstaff's Bundles here:
-"
-" Note: You don't set neobundle setting in .gvimrc!
-" Original repos on github
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundle 'vim-airline/vim-airline'
-NeoBundle 'vim-airline/vim-airline-themes'
-NeoBundle 'joedicastro/vim-molokai256'
-NeoBundle 'tomasr/molokai'
-NeoBundle 'tpope/vim-dispatch'
-NeoBundle 'ctrlpvim/ctrlp.vim'
-NeoBundle 'edkolev/tmuxline.vim'
+" Use PlugInstall to install plugins and PlugUpgrade to upgrade vim-plug
 
-" NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-" vim-scripts repos
-" NeoBundle 'L9'
-" NeoBundle 'FuzzyFinder'
-" NeoBundle 'rails.vim'
-" Non github repos
-" NeoBundle 'git://git.wincent.com/command-t.git'
-" gist repos
-" NeoBundle 'gist:Shougo/656148', {
-" \ 'name': 'everything.vim',
-" \ 'script_type': 'plugin'}
-" Non git repos
-" NeoBundle 'http://svn.macports.org/repository/macports/contrib/mpvim/'
-" NeoBundle 'https://bitbucket.org/ns9tks/vim-fuzzyfinder'
-
-" ...
-
-"
-" Brief help
-" :NeoBundleList          - list configured bundles
-" :NeoBundleInstall(!)    - install(update) bundles
-" :NeoBundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-
-" Installation check.
-NeoBundleCheck
-
-call neobundle#end()
+call plug#end()
 
 syntax enable
 set background=dark            " set a dark background
