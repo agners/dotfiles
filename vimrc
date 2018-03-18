@@ -13,6 +13,8 @@ set showcmd                     " shows partial commands
 set hidden                      " hide the inactive buffers
 set ruler                       " sets a permanent rule
 set clipboard^=unnamedplus	" use sytem clipboard
+set undofile                    " Save undos after file closes
+set undodir=$HOME/.vim/undo 
 
 " Don't clear clipboard on exit
 autocmd VimLeavePre * call system("xsel -ib", getreg('+'))
