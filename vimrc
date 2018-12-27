@@ -15,6 +15,7 @@ set ruler                       " sets a permanent rule
 set clipboard^=unnamedplus	" use sytem clipboard
 set undofile                    " Save undos after file closes
 set undodir=$HOME/.vim/undo 
+set t_Co=256                   " 256 colors for the terminal
 
 " Don't clear clipboard on exit
 autocmd VimLeavePre * call system("xsel -ib", getreg('+'))
@@ -38,7 +39,7 @@ Plug 'joedicastro/vim-molokai256'
 Plug 'tomasr/molokai'
 Plug 'tpope/vim-dispatch'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'edkolev/tmuxline.vim'
+"Plug 'edkolev/tmuxline.vim'
 
 " Use PlugInstall to install plugins and PlugUpgrade to upgrade vim-plug
 
@@ -46,7 +47,6 @@ call plug#end()
 
 syntax enable
 set background=dark            " set a dark background
-set t_Co=256                   " 256 colors for the terminal
 if has('gui_running')
 	colorscheme molokai
 else
@@ -60,7 +60,9 @@ set noshowmode
 set mouse=a
 
 " Airline configuration
-let g:airline_theme='powerlineish'
+let g:solarized_termcolors=256
+let g:airline_theme='solarized'
+let g:airline_solarized_bg='dark'
 let g:airline_powerline_fonts=1
 let g:airline#extensions#branch#enabled=1
 let g:airline#extensions#tabline#enabled=1
