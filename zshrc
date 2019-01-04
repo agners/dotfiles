@@ -1,71 +1,106 @@
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-setopt appendhistory notify
-bindkey -v
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/ags/.zshrc'
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
+# Path to your oh-my-zsh installation.
+export ZSH="/home/sag/.oh-my-zsh"
 
-autoload -Uz promptinit
-promptinit
+#powerline-daemon -q
+#. /usr/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
 
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME="maran"
 
-source /usr/share/fonts/awesome-terminal-fonts/fontawesome-regular.sh
-#source /usr/lib/zsh-git-prompt/zshrc.sh
-#GIT_UNTRACKED=0
-PROMPT='%B%F{green}%n@%m%f %F{blue}%1~ $(git_super_status)$ %b%f'
-RPROMPT='[%B%F{yellow}%?%f]'
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
-# Required for fallback mode to work with oh-my-git-themes
-omg_is_a_git_repo_symbol="\u${CODEPOINT_OF_AWESOME_GITHUB_ALT}"
-omg_has_untracked_files_symbol="\u${CODEPOINT_OF_AWESOME_TINT}"
-omg_has_adds_symbol="\u${CODEPOINT_OF_AWESOME_PLUS}"
-omg_has_deletions_symbol="\u${CODEPOINT_OF_AWESOME_MINUS}"
-omg_has_cached_deletions_symbol="\u${CODEPOINT_OF_OCTICONS_X}"
-omg_has_modifications_symbol="\u${CODEPOINT_OF_OCTICONS_PENCIL}"
-omg_has_cached_modifications_symbol="\u${CODEPOINT_OF_OCTICONS_FILE_TEXT}"
-omg_ready_to_commit_symbol="\u${CODEPOINT_OF_AWESOME_SIGNIN}"
-omg_is_on_a_tag_symbol="\u${CODEPOINT_OF_AWESOME_TAG}"
-omg_needs_to_merge_symbol="\u1109"
-omg_detached_symbol="\u${CODEPOINT_OF_AWESOME_UNLINK}"
-omg_can_fast_forward_symbol="\u${CODEPOINT_OF_AWESOME_DOUBLE_ANGLE_UP}"
-omg_has_diverged_symbol="\u${CODEPOINT_OF_OCTICONS_GIT_BRANCH}"
-omg_not_tracked_branch_symbol="\u${CODEPOINT_OF_AWESOME_LAPTOP}"
-omg_rebase_tracking_branch_symbol="\u${CODEPOINT_OF_OCTICONS_GIT_PULL_REQUEST}"
-omg_merge_tracking_branch_symbol="\u${CODEPOINT_OF_OCTICONS_GIT_MERGE}"
-omg_should_push_symbol="\u${CODEPOINT_OF_OCTICONS_CLOUD_UPLOAD}"
-omg_has_stashes_symbol="\u${CODEPOINT_OF_AWESOME_STAR}"
-omg_has_action_in_progress_symbol="\u${CODEPOINT_OF_AWESOME_WRENCH}"
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
 
-source "$HOME/.antigen/antigen.zsh"
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
 
-antigen use oh-my-zsh
-antigen bundle arialdomartini/oh-my-git
-#antigen theme arialdomartini/oh-my-git-themes oppa-lana-style
-#antigen theme arialdomartini/oh-my-git-themes arialdo-granzestyle
-#antigen theme arialdomartini/oh-my-git-themes arialdo-pathinline
-antigen theme /home/ags/projects/oh-my-git-themes arialdo-pathinline --no-local-clone
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
 
-antigen apply
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
 
-bindkey "^R" history-incremental-search-backward
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
 
-export SVN_EDITOR="vim"
-export EDITOR="vim"
-export GCC_COLORS="error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
-export GREP_COLORS="ms=1;32:fn=36"
-export PATH="/home/ags/.cargo/bin:/home/ags/bin:${PATH}"
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
 
-# Enable colors with dark theme for the IP command
-export COLORFGBG="3;3;3"
-alias ip="ip -c"
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
 
-alias vi=vim
-alias mv="mv -i"
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
 
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load?
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(
+  git
+)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+#PROMPT="$fg_bold[green]%}$USER@%m %{$fg_bold[blue]%}%~%{$reset_color%}$(git_prompt_info) ⌚ %{$fg_bold[red]%}%*%{$reset_color%}
+#$ "
+
+alias vi vim
