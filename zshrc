@@ -72,6 +72,14 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+export EDITOR="vim"
+export SVN_EDITOR="vim"
+export GCC_COLORS="error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
+export GREP_COLORS="ms=1;33:fn=36"
+
+# Make sure git log stays on console on quit...
+# # This overwrites oh-my-zsh default with git default
+export LESS="-FRX"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
