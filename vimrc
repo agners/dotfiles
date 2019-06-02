@@ -59,6 +59,8 @@ set noshowmode
 " Use mouse mode even if tmux uses mouse mode...
 set mouse=a
 
+let g:languagetool_lang='en-US'
+
 " Airline configuration
 let g:solarized_termcolors=256
 let g:airline_theme='solarized'
@@ -82,9 +84,9 @@ let mapleader=" "
 nmap <leader>t     :enew<CR>
 nmap <leader>e     :bnext<CR>
 nmap <leader>w     :bprevious<CR>
-nnoremap <C-w>     :bprevious<CR>
-nnoremap <C-e>     :bnext<CR>
-nnoremap <C-t>     :enew<CR>
+"nnoremap <C-w>     :bprevious<CR>
+"nnoremap <C-e>     :bnext<CR>
+"nnoremap <C-t>     :enew<CR>
 
 map <F8>     :make\|copen<CR>
 
